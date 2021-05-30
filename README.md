@@ -1,2 +1,2 @@
-# vuejs
+# Vue JS
 Vue JS Lessons.
