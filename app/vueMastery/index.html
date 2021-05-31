@@ -3,14 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Product App</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+<div class="nav-bar"></div>
 <div id="app">
-    <h1>{{ product }}</h1>
-    <h2>{{ description }}</h2>
+    <div class="product">
+        <div class="product-image">
+            <img v-bind:src="image">
+        </div>
+        <div class="product-info">
+            <h1>{{ product }}</h1>
+            <h2>{{ description }}</h2>
+            <a :href="link" target="_blank">More Products</a>
+            <div class="stocks">
+                <p v-show="inStock">In Stock</p>
+<!--                <p v-if="inventory > 10">In Stock</p>-->
+<!--                <p v-else-if="inventory <= 10 && inventory > 0">Almost Sold Out</p>-->
+                <p v-else="inStock">Out of Stock</p>
+                <p v-if="onSale">On Sale!</p>
+            </div>
+        </div>
+
+    </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-<script src="main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
